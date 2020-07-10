@@ -77,6 +77,9 @@ const Post = ({
     page,
   } = post || {};
 
+  const gtmTag = (element, prefix) =>
+  prefix + GTM.post[element] + "_" + _id;
+
   const [copied, setCopied] = useState(false);
   const [comment, setComment] = useState([]);
 
@@ -226,7 +229,7 @@ const Post = ({
       {postId && isAuthenticated ? (
         <div onClick={onClick}>
           {!loadMorePost ? (
-            <span className="view-more">View Less</span>
+            <span id={gtmTag("viewMore", GTM.post.prefix)} className="view-more">View Less</span>
           ) : (
             <span
               id={GTM.post.prefix + GTM.post.viewMore}
@@ -237,7 +240,7 @@ const Post = ({
           )}
         </div>
       ) : (
-        <span className="view-more">View More</span>
+        <span id={gtmTag("viewMore", GTM.feed.prefix)} className="view-more">View More</span>
       )}
     </Card.Body>
   );

@@ -46,6 +46,7 @@ import {
   SET_LIKE,
 } from "hooks/actions/feedActions";
 import { LOGIN } from "templates/RouteWithSubRoutes";
+import GTM  from "../constants/gtm-tags";
 
 export const isAuthorOrg = (organisations, author) => {
   const isValid = organisations?.some(
@@ -53,6 +54,9 @@ export const isAuthorOrg = (organisations, author) => {
   );
   return isValid;
 };
+
+const gtmTag = (element, prefix) =>
+prefix + GTM.post[element];
 
 const { black, darkerGray, royalBlue, white, offWhite } = theme.colors;
 
@@ -570,7 +574,7 @@ const Feed = (props) => {
                 ))}
               </MenuWrapper>
               <FiltersWrapper>
-                <button onClick={handleShowFilters}>
+                <button id={gtmTag("filterPost", GTM.feed.prefix)} onClick={handleShowFilters}>
                   <span>
                     <FiltersIcon />
                   </span>
@@ -584,7 +588,7 @@ const Feed = (props) => {
           <ContentWrapper>
             <HeaderWrapper>
               <h1>Help Board</h1>
-              <button onClick={handleCreatePost}>
+              <button id={gtmTag("createPost", GTM.feed.prefix)} onClick={handleCreatePost}>
                 Create a post
                 <SvgIcon
                   src={creatPost}

@@ -38,6 +38,14 @@ module.exports = {
     share: "_SH",
     viewMore: "_VM",
     writeComment: "_WC",
+    createPost: "_CP",
+    allPost: "_AP",
+    requestHelp: "_RE",
+    offeringHelp: "_OF",
+    filterPost: "_FI",
+    location: "_LO",
+    providers: "_PV",
+    type: "_TP",
   },
   sign: {
     inPrefix: "SI",
@@ -57,4 +65,19 @@ module.exports = {
     donor: "_DI",
     orgbtn: "_ORG",
   },
+  feed: {
+    prefix: "HB",
+  },
+  providersFilters: {
+    individual: "_IN",
+    startUp: "_ST",
+    company: "_CMP",
+    community: "_CM",
+    government: "_GOV",
+    researchAndDevelopment: "_RD",
+    nonProfit: "_NP",
+    university: "_UN",
+    healthCareProvider: "_HCP",
+    others: "_OT"
+  }
 };
