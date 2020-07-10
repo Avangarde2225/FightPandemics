@@ -79,5 +79,5 @@ module.exports = {
     university: "_UN",
     healthCareProvider: "_HCP",
     others: "_OT"
-  }
+  },
 };
